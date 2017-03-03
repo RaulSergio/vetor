@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Vetor com Laço</title>
+    </head>
+
+    <script>
+        var vetor = new Array;
+
+        function insereElemento(){
+            var n = document.getElementById("n").value;
+            vetor.push(n);
+            mostrar(n);
+        }    
+        function mostrar(n){
+            var saida = document.getElementById("saida");
+            if(saida.innerText.charAt(0)==""){
+                saida.innerText = saida.innerText + n;
+            }else{
+                saida.innerText = saida.innerText + ", " + n;
+            }    
+
+        }
+        function maior(){
+            var maior = vetor[0];
+
+            for (i=1;i<vetor.length;i++){
+                if (vetor[i]>maior){
+                    maior = vetor[i];
+                }
+            }
+            var saidaMaior = document.getElementById("saidaMaior");
+            saidaMaior.innerText = "O maior elemento é: "+ maior;
+        }
+
+        
+    </script>
+
+        <body>
+            <input type="number" value="" id="n" placeholder="Insira um numero  ">
+            <input type="button" value="+" onclick="insereElemento()"><br/>
+            <input type="button" value="Verificar Maior" onclick="maior()"><br/><br/>
+
+            <label id="saida" ></label><br/>
+            <label id="saidaMaior" value = ""></label><br/>
+        </body>
+
+</html>
